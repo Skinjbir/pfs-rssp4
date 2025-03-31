@@ -1,0 +1,21 @@
+[
+    {
+      "id": "ISO_27001_A.13.1.1",
+      "description": "SSH ouvert à tous interdit",
+      "field": "public_ssh",
+      "expected": false,
+      "resource_type": "vm",
+      "severity": "critique",
+      "recommendation": "Restreindre le port 22 aux IP de confiance"
+    },
+    {
+      "id": "RGPD_32",
+      "description": "Base de données non chiffrée",
+      "field": "encrypted",
+      "expected": true,
+      "resource_type": "db",
+      "severity": "élevée",
+      "recommendation": "Activer le chiffrement de la base"
+    }
+  ]
+  
