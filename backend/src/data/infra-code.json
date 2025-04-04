@@ -1,0 +1,60 @@
+{
+  "resources": [
+    {
+      "name": "vm-production-01",
+      "type": "azurerm_virtual_machine",
+      "publicIp": true,
+      "port": 22,
+      "location": "westeurope",
+      "loggingEnabled": false
+    },
+    {
+      "name": "vm-test-02",
+      "type": "azurerm_virtual_machine",
+      "publicIp": false,
+      "port": 8080,
+      "location": "westeurope",
+      "loggingEnabled": true
+    },
+    {
+      "name": "storage-backups",
+      "type": "azurerm_storage_account",
+      "encryption": false,
+      "httpsOnly": true,
+      "softDelete": true,
+      "location": "francecentral"
+    },
+    {
+      "name": "nsg-prod",
+      "type": "azurerm_network_security_group",
+      "rules": [
+        {
+          "name": "AllowSSH",
+          "port": 22,
+          "protocol": "TCP",
+          "access": "Allow"
+        },
+        {
+          "name": "DenyAllInbound",
+          "port": "*",
+          "protocol": "*",
+          "access": "Deny"
+        }
+      ]
+    },
+    {
+      "name": "app-gateway",
+      "type": "azurerm_application_gateway",
+      "wafEnabled": false,
+      "sslPolicy": "Custom",
+      "frontendPort": 443
+    },
+    {
+      "name": "keyvault-main",
+      "type": "azurerm_key_vault",
+      "softDeleteEnabled": true,
+      "purgeProtection": false,
+      "accessPoliciesConfigured": true
+    }
+  ]
+}
