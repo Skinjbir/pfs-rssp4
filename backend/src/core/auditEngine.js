@@ -16,7 +16,7 @@ const dynamicAudit = require('./dynamicAudit');
 
 const runAuditEngine = async (auditType, auditData) => {
     // Check if the audit type is 'static' and perform static analysis
-    if (auditType == 'static') return await staticAudit.analyze(auditData);
+    if (auditType == 'static') return await staticAudit.auditStatic(auditData);
 
 
     // Check if the audit type is 'dynamic' and perform dynamic analysis
@@ -26,6 +26,6 @@ const runAuditEngine = async (auditType, auditData) => {
     throw new Error('Invalid audit type'); 
 }
 
-runAuditEngine('static', 's');
-runAuditEngine('dynamic', 's')
+runAuditEngine('static', '../data/infra-code.json');
+// runAuditEngine('dynamic', 's')
 module.exports = runAuditEngine;
