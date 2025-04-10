@@ -19,7 +19,7 @@
     {
       "name": "storage-backups",
       "type": "azurerm_storage_account",
-      "encryption": false,
+      "encryption": true,
       "httpsOnly": true,
       "softDelete": true,
       "location": "francecentral"

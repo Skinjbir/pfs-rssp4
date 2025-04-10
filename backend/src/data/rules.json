@@ -5,13 +5,14 @@
       "file": "encryption-at-rest.js",
       "target": "azurerm_storage_account",
       "severity": "high"
+      
     },
     {
       "id": "ISO_A_13_1_1",
       "label": "Pas d’accès public sur les ports critiques",
       "file": "secure-network.js",
       "target": "azurerm_network_security_group",
-      "severity": "critical"
+      "severity": "criticalss"
     }
   ]
   
